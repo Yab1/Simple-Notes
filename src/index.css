@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -30px;
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px;
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  background: grey;
+  margin-bottom: 30px;
+}
+.prevent-scroll {
+  overflow: hidden;
+}
+.homepage-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+  gap: 1.1em;
+  background-image: url(./assets/background.png);
+  width: 100%;
+  min-height: 100vh;
+}
+.prevent-scroll {
+  overflow: hidden;
+  max-height: 100vh;
+}
+.hidden {
+  position: fixed;
+  opacity: 0%;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+  z-index: 10000;
+}
+.active {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  z-index: 100;
+}
+.none {
+  display: none;
+}
+svg {
+  height: fit-content;
+  width: 90%;
+}
+.simple-logo {
+  stroke-width: 2;
+  animation: revel 11s ease forwards;
+  justify-self: end;
+}
+#notes-logo {
+  animation: fill 0.5s 3s ease forwards;
+  stroke-width: 3;
+}
+#notes-logo path:nth-child(1) {
+  stroke-dasharray: 567.055908203125;
+  stroke-dashoffset: 567.055908203125;
+  animation: line-anim 2s ease forwards;
+}
+#notes-logo path:nth-child(2) {
+  stroke-dasharray: 489.70989990234375;
+  stroke-dashoffset: 489.70989990234375;
+  animation: line-anim 2s ease forwards 0.3s;
+}
+#notes-logo path:nth-child(3) {
+  stroke-dasharray: 342.4130859375;
+  stroke-dashoffset: 342.4130859375;
+  animation: line-anim 2s ease forwards 0.6s;
+}
+#notes-logo path:nth-child(4) {
+  stroke-dasharray: 429.6143493652344;
+  stroke-dashoffset: 429.6143493652344;
+  animation: line-anim 2s ease forwards 0.9s;
+}
+#notes-logo path:nth-child(5) {
+  stroke-dasharray: 432.3929138183594;
+  stroke-dashoffset: 432.3929138183594;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #3d5afe;
+  }
+}
+@keyframes revel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@media screen and (min-width: 600px) {
+  svg {
+    width: 60%;
+  }
+}
