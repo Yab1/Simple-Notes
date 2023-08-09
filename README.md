@@ -1,6 +1,6 @@
 # Simple Notes - Note Taking Website
 
-![Simple Notes Logo](https://github.com/Yab1/Simple-Notes/blob/main/public/favicon.ico)
+![Simple Notes Logo]("https://github.com/Yab1/Simple-Notes/blob/main/public/favicon.ico")
 
 Welcome to Simple Notes, your all-in-one note-taking website for organizing your notes in built-in categories! Stay organized and efficient with your note management, whether it's for personal use, work, or study.
 
