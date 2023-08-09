@@ -1,0 +1,80 @@
+{
+  "notes": [
+    {
+      "title": "From the Developer",
+      "details": "Hello, I'm Yeabsera, a skilled front-end developer and UI designer dedicated to crafting captivating digital experiences. With a keen eye for aesthetics and a love for coding, I bring a unique blend of design and functionality to every project. Let's connect and bring your ideas to life: ",
+      "category": "reminder",
+      "id": 1,
+      "name": "Connect with Me",
+      "url": "https://www.linkedin.com/in/yeabsera-lisanework-7570981ba/"
+    },
+    {
+      "title": "Quizzical",
+      "details": "Quizzical offers interactive quizzes with adaptable difficulty levels. Engage in challenging questions, receive instant feedback, and enjoy a fun learning experience. Explore it at ",
+      "category": "work",
+      "id": 2,
+      "name": "Quizzical",
+      "url": "https://yab1.github.io/Quizzical/"
+    },
+    {
+      "title": "Simple Notes",
+      "details": "Simple Notes is your go-to platform for hassle-free note-taking and organization. Seamlessly record your thoughts and categorize them for easy access, simplifying your daily life. Explore it here: ",
+      "category": "todo",
+      "id": 3,
+      "name": "Simple Notes",
+      "url": ""
+    },
+    {
+      "title": "Free Portfolio Website",
+      "details": "Experience the Freedom of Expression with our Free-to-Use Portfolio Website. Showcase your creativity, skills, and achievements in a personalized online portfolio that leaves a lasting impression. Get started today and let your work speak for itself. Explore it here: ",
+      "category": "reminder",
+      "id": 4,
+      "name": "Portfolio Website",
+      "url": ""
+    },
+    {
+      "title": "WayFinder Plus",
+      "details": "Introducing Way Finder Plus, a dynamic website that empowers users to seamlessly navigate both indoor and outdoor spaces using immersive panoramic images. Experience the progress of this innovative project and discover the future of interactive navigation: Check Progress ",
+      "category": "money",
+      "id": 5,
+      "name": "WayFinder Plus",
+      "url": ""
+    },
+    {
+      "title": "Project Update",
+      "details": "Stay tuned for exciting updates on our latest project. We're working hard to bring you innovative features and improvements that will enhance your user experience.",
+      "category": "todo",
+      "id": 6
+    },
+    {
+      "title": "Financial Tips",
+      "details": "Learn essential financial tips for managing your budget and achieving your savings goals. Discover strategies to make the most of your hard-earned money.",
+      "category": "money",
+      "id": 7
+    },
+    {
+      "title": "Creative Writing Workshop",
+      "details": "Join our upcoming creative writing workshop and unleash your creativity. Dive into storytelling techniques, character development, and more.",
+      "category": "work",
+      "id": 8
+    },
+    {
+      "title": "Daily Affirmations",
+      "details": "Start your day with positive affirmations that uplift your spirits and set a confident tone. Embrace the power of self-encouragement.",
+      "category": "reminder",
+      "id": 9
+    },
+    {
+      "title": "Design Inspiration",
+      "details": "Explore the world of design with captivating visuals and innovative concepts. Find inspiration for your next creative project.",
+      "category": "money",
+      "id": 10
+    },
+    {
+      "title": "Tech Updates",
+      "details": "Stay informed about the latest tech trends and advancements. Discover insights into cutting-edge technologies that shape our digital landscape.",
+      "category": "work",
+      "id": 11
+    }
+  ]
+}
