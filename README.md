@@ -34,7 +34,7 @@ Simple Notes is a user-friendly note-taking website that offers a seamless way t
 ## Screenshots
 
 ![Home Page](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot1.png)
-![MY Notes](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot1.png)
+![MY Notes](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot2.png)
 ![Create Notes](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot3.png)
 
 ## Contributing
