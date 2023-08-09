@@ -39,7 +39,7 @@ body::-webkit-scrollbar {
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   align-content: center;
-  gap: 1.1em;
+  gap: 1.3em;
   background-image: url(./assets/background.png);
   width: 100%;
   min-height: 100vh;
