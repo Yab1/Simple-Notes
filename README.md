@@ -33,9 +33,13 @@ Simple Notes is a user-friendly note-taking website that offers a seamless way t
 
 ## Screenshots
 
-![Home Page](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot1.png)
-![MY Notes](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot2.png)
-![Create Notes](https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot3.png)
+<table>
+  <tr>
+    <td><img src="https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot1.png" alt="Screenshot 1" width="400"/></td>
+    <td><img src="https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot2.png" alt="Screenshot 2" width="400"/></td>
+    <td><img src="https://github.com/Yab1/Simple-Notes/blob/main/src/assets/screenshot3.png" alt="Screenshot 2" width="400"/></td>
+  </tr>
+</table>
 
 ## Contributing
 
@@ -43,6 +47,6 @@ Contributions are welcome! If you'd like to enhance Simple Notes or add new feat
 
 ---
 
-Visit Simple Notes [Live Demo]()  
+Visit Simple Notes [Live Demo](https://simple-notes-omega.vercel.app/)  
 Connect with me:  
 Follow me on [LinkedIn](https://www.linkedin.com/in/yeabsera-lisanework-7570981ba/) | Check out my [GitHub](https://github.com/Yab1) repository
