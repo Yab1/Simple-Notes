@@ -48,5 +48,6 @@ Contributions are welcome! If you'd like to enhance Simple Notes or add new feat
 ---
 
 Visit Simple Notes [Live Demo](https://simple-notes-omega.vercel.app/)  
+
 Connect with me:  
-Follow me on [LinkedIn](https://www.linkedin.com/in/yeabsera-lisanework-7570981ba/) | Check out my [GitHub](https://github.com/Yab1) repository
+Visit my website at [Yeabsera](https://yeabsera-girxkocyp-yab1.vercel.app) | Follow me on [LinkedIn](https://www.linkedin.com/in/yeabsera-lisanework-7570981ba/) | Check out my [GitHub](https://github.com/Yab1)
