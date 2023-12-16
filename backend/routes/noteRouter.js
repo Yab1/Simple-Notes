@@ -1,31 +1,27 @@
 import express from "express";
-// import data from "../data/db.json";
+import {
+  getNotes,
+  getNote,
+  createNote,
+  deleteNote,
+  updateNote,
+} from "../controllers/noteController.js";
 
 const noteRouter = express.Router();
 
 // GET all notes
-noteRouter.get("/", (req, res) => {
-  res.json({ msg: "Get all notes" });
-});
+noteRouter.get("/", getNotes);
 
 // GET a single note
-noteRouter.get("/:id", (req, res) => {
-  res.json({ msg: "Get a single note" });
-});
+noteRouter.get("/:id", getNote);
 
 // POST a new note
-noteRouter.post("/", (req, res) => {
-  res.json({ msg: "Post a new note" });
-});
+noteRouter.post("/", createNote);
 
 // DELETE a new note
-noteRouter.delete("/:id", (req, res) => {
-  res.json({ msg: "Delete a note" });
-});
+noteRouter.delete("/:id", deleteNote);
 
 // UPDATE a new note
-noteRouter.patch("/:id", (req, res) => {
-  res.json({ msg: "Update a note" });
-});
+noteRouter.patch("/:id", updateNote);
 
 export default noteRouter;
