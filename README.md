@@ -1,21 +1,21 @@
-# Simple Notes - Note Taking Website
+# Quick Notes - Note Taking Website
 
-![Simple Notes Logo](https://github.com/Yab1/Simple-Notes/blob/main/public/favicon.ico)
+![Quick Notes Logo](https://github.com/Yab1/Simple-Notes/blob/main/public/favicon.ico)
 
-Welcome to Simple Notes, your all-in-one note-taking website for organizing your notes in built-in categories! Stay organized and efficient with your note management, whether it's for personal use, work, or study.
+Welcome to Quick Notes, your all-in-one note-taking website for organizing your notes in built-in categories! Stay organized and efficient with your note management, whether it's for personal use, work, or study.
 
 ## Table of Contents
 
-- [About Simple Notes](#about-simple-notes)
+- [About Quick Notes](#about-quick-notes)
 - [Features](#features)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 
-## About Simple Notes
+## About Quick Notes
 
-Simple Notes is a user-friendly note-taking website that offers a seamless way to capture and organize your thoughts. With a variety of built-in categories, you can easily categorize your notes and find them whenever you need them. Enjoy a clutter-free note-taking experience that keeps your ideas and information at your fingertips.
+Quick Notes is a user-friendly note-taking website that offers a seamless way to capture and organize your thoughts. With a variety of built-in categories, you can easily categorize your notes and find them whenever you need them. Enjoy a clutter-free note-taking experience that keeps your ideas and information at your fingertips.
 
 ## Features
 
@@ -43,11 +43,11 @@ Simple Notes is a user-friendly note-taking website that offers a seamless way t
 
 ## Contributing
 
-Contributions are welcome! If you'd like to enhance Simple Notes or add new features, feel free to fork the repository, create a new branch, and submit a pull request. You can also report issues or suggest improvements through the GitHub issue tracker.
+Contributions are welcome! If you'd like to enhance Quick Notes or add new features, feel free to fork the repository, create a new branch, and submit a pull request. You can also report issues or suggest improvements through the GitHub issue tracker.
 
 ---
 
-Visit Simple Notes [Live Demo](https://simple-notes-omega.vercel.app/)  
+Visit Quick Notes [Live Demo](https://simple-notes-omega.vercel.app/)  
 
 Connect with me:  
 Visit my website at [Yeabsera](https://yeabsera-girxkocyp-yab1.vercel.app) | Follow me on [LinkedIn](https://www.linkedin.com/in/yeabsera-lisanework-7570981ba/) | Check out my [GitHub](https://github.com/Yab1)
