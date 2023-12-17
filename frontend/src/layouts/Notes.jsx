@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import { Navbar, Drawer } from "@/components/notes/widgets";
+import { Navbar, Drawer } from "@/notes/widgets/";
 
-function UserNotes() {
+function Notes() {
   return (
     <Fragment>
       <Navbar />
@@ -10,4 +10,4 @@ function UserNotes() {
   );
 }
 
-export default UserNotes;
+export default Notes;

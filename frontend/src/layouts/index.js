@@ -1,2 +1,2 @@
 export { default as Auth } from "./Auth";
-export { default as UserNotes } from "./UserNotes";
+export { default as Notes } from "./Notes";
