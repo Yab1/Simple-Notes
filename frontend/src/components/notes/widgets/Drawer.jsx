@@ -1,18 +1,9 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Drawer() {
-  const tags = [
-    { name: "Assignment", background: "bg-info", badge: "badge-info" },
-    { name: "Ideas", background: "bg-success", badge: "badge-success" },
-    { name: "Meetings", background: "bg-primary", badge: "badge-primary" },
-    { name: "Personal", background: "bg-secondary", badge: "badge-secondary" },
-    { name: "Project", background: "bg-warning", badge: "badge-warning" },
-    { name: "Shopping", background: "bg-info", badge: "badge-info" },
-    { name: "Study", background: "bg-error", badge: "badge-error" },
-    { name: "Wishlist", background: "bg-success", badge: "badge-success" },
-    { name: "Work", background: "bg-primary", badge: "badge-primary" },
-  ];
+  const tags = useSelector((state) => state.ui.tags);
 
   const renderTags = tags.map((tag, index) => (
     <Fragment key={index}>
@@ -32,7 +23,7 @@ function Drawer() {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content px-5 py-10 h-drawer">
+      <div className="drawer-content px-5 py-10 h-drawer grid place-content-center">
         <Outlet />
       </div>
       <div className="drawer-side h-fit">
