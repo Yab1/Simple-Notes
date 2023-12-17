@@ -1,15 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Auth, Dashboard } from "@/layouts";
+import { childRoutes } from "@/components/notes/pages";
+import { Home, ErrorPage } from "@/layouts";
 
-const router = createBrowserRouter([
+const routes = [
   {
-    path: "/auth",
-    element: <Auth />,
+    path: "/",
+    element: <Home />,
+    children: childRoutes,
+    errorElement: <ErrorPage />,
   },
-  {
-    path: "/notes",
-    element: <Dashboard />,
-  },
-]);
+];
+
+const router = createBrowserRouter(routes, {
+  basename: "/quick-notes",
+});
 
 export default router;
