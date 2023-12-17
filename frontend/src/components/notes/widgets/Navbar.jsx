@@ -1,39 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { Avater, ThemeController } from "./atoms";
 
 function Navbar() {
+  const location = useLocation();
+
   return (
     <header className="navbar bg-base-300">
-      <div className="dropdown dropdown-bottom navbar-start">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost btn-circle avatar"
-        >
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
-          </div>
-        </div>
-        <ul
-          tabIndex={0}
-          className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-        >
+      <div className="dropdown dropdown-bottom navbar-start w-72 flex gap-3">
+        <Avater />
+      </div>
+
+      <div className="text-sm breadcrumbs navbar-center">
+        <ul>
           <li>
-            <Link to={`profile`}>Profile</Link>
+            <Link to={"notes"}>Notes</Link>
           </li>
-          <li>
-            <Link to={`about`}>About</Link>
-          </li>
-          <li>
-            <Link to={`logout`}>Logout</Link>
+          <li className="capitalize">
+            {location.pathname !== "/notes"
+              ? location.pathname.replace(/^\/+/, "")
+              : null}
           </li>
         </ul>
       </div>
+      <div className="navbar-end flex-1 px-3">
+        <ThemeController />
 
-      <div className="navbar-end">
-        <Link to={`create`} className="btn bg-blue-300">
+        <Link to={`create`} className="btn bg-blue-300 ml-5">
           Add New Note
         </Link>
       </div>
