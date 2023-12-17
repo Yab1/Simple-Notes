@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <header className="navbar bg-base-300">
@@ -19,20 +21,16 @@ function Navbar() {
           className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
         >
           <li>
-            <a>Profile</a>
+            <Link to={`profile`}>Profile</Link>
           </li>
           <li>
-            <a>Settings</a>
+            <Link to={`about`}>About</Link>
           </li>
           <li>
-            <a>Logout</a>
+            <Link to={`logout`}>Logout</Link>
           </li>
         </ul>
       </div>
-
-      {/* <a className="btn btn-ghost hover:bg-transparent text-xl font-semibold font-playpen">
-        daisy notes
-      </a> */}
 
       <div className="navbar-end">
         <a className="btn bg-blue-300">Add New Note</a>
