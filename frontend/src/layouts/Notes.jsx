@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Navbar, Drawer } from "@/notes/widgets/";
+import { Navbar, Drawer } from "@/components/notes/widgets";
 
 function Notes() {
   return (
