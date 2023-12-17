@@ -33,7 +33,9 @@ function Navbar() {
       </div>
 
       <div className="navbar-end">
-        <a className="btn bg-blue-300">Add New Note</a>
+        <Link to={`create`} className="btn bg-blue-300">
+          Add New Note
+        </Link>
       </div>
     </header>
   );
