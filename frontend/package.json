@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dicebear/collection": "^7.0.1",
+    "@dicebear/core": "^7.0.1",
     "@reduxjs/toolkit": "^2.0.1",
     "autoprefixer": "^10.4.16",
     "daisyui": "^4.4.20",
