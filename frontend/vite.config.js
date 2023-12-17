@@ -12,8 +12,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src/"),
-      "@/notes": path.resolve(__dirname, "./src/components/notes/"),
-      "@/auth": path.resolve(__dirname, "./src/components/auth/"),
     },
   },
 });
