@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Auth, Notes } from "@/layouts";
+import { Auth, Dashboard } from "@/layouts";
 
 const router = createBrowserRouter([
   {
@@ -8,7 +8,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/notes",
-    element: <Notes />,
+    element: <Dashboard />,
   },
 ]);
 

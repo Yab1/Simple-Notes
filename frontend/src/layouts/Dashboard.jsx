@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Navbar, Drawer } from "@/components/notes/widgets";
 
-function Notes() {
+function Dashboard() {
   return (
     <Fragment>
       <Navbar />
@@ -10,4 +10,4 @@ function Notes() {
   );
 }
 
-export default Notes;
+export default Dashboard;
