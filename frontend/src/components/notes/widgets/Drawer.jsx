@@ -32,7 +32,7 @@ function Drawer() {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu py-4 px-0 w-72 h-drawer text-base-content border-r border-r-base-300">
+        <ul className="menu py-4 px-0 w-72 h-drawer text-base-content border-r border-r-base-300 grid">
           {renderTags}
         </ul>
       </div>
