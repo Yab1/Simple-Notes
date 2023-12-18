@@ -5,7 +5,7 @@ function Navbar() {
   const location = useLocation();
 
   return (
-    <header className="navbar bg-base-300 sticky">
+    <header className="navbar bg-base-300 ">
       <div className="dropdown dropdown-bottom navbar-start w-72 flex gap-3">
         <Avater />
       </div>
