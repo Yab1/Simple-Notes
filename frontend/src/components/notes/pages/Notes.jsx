@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { colorMapping } from "@/constants";
+
+console.log(colorMapping["Assignment".toUpperCase()].bgColor);
 
 function Notes() {
   const notes = useSelector((state) => state.notes.notes);
@@ -7,12 +10,20 @@ function Notes() {
   const renderNotes = notes.map(({ id, title, tag, detail, time, date }) => (
     <div
       key={id}
-      className="card w-1/2 bg-pink-500 shadow-xl cursor-pointer text-white border border-white"
+      className={
+        "card shadow-xl cursor-pointer text-white " +
+        colorMapping[tag.toUpperCase()].bgColor
+      }
     >
       <div className="card-body grid grid-cols-4">
         <h2 className="card-title col-span-2">{title}</h2>
         <div className="card-actions justify-end col-start-4">
-          <div className="badge badge-info py-5 rounded-lg font-bold text-white">
+          <div
+            className={
+              "badge bg-white border-none py-5 rounded-lg font-bold " +
+              colorMapping[tag.toUpperCase()].textColor
+            }
+          >
             {tag}
           </div>
         </div>
@@ -26,7 +37,7 @@ function Notes() {
   ));
 
   return (
-    <Link to={"/edit/1"} className="h-drawer py-5 flex flex-wrap gap-5">
+    <Link to={"/edit/1"} className="h-drawer py-5 grid grid-cols-2 gap-5">
       {renderNotes}
     </Link>
   );
