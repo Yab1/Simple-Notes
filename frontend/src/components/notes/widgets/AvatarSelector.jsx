@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { createAvatar } from "@dicebear/core";
 import { bottts } from "@dicebear/collection";
 
 const AvatarSelector = () => {
   const [avatars, setAvatars] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const generateAvatars = () => {
       const newAvatars = [];
       for (let i = 0; i < 36; i++) {
