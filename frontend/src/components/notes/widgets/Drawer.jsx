@@ -1,19 +1,21 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { colorMapping } from "@/constants";
 
 function Drawer() {
-  const tags = useSelector((state) => state.ui.tags);
-
-  const renderTags = tags.map((tag, index) => (
-    <Fragment key={index}>
+  const renderTags = Object.entries(colorMapping).map(([key, values]) => (
+    <Fragment key={crypto.randomUUID()}>
       <li className="mx-2">
-        <a className="flex items-center">
+        <a className="flex items-center text-white font-medium">
           <div
-            className={`w-3 aspect-square ${tag.background} rounded-full`}
+            className={`w-3 aspect-square ${values.bgColor} rounded-full`}
           ></div>
-          {tag.name}
-          <div className={`badge ${tag.badge} ml-auto`}>07</div>
+          {key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}
+          <div
+            className={`badge ${values.bgColor} border-none ml-auto text-white`}
+          >
+            07
+          </div>
         </a>
       </li>
       <div className="divider my-1"></div>
