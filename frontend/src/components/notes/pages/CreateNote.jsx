@@ -36,7 +36,7 @@ function CreateNote() {
       <input
         id="title"
         type="text"
-        placeholder="Note Title"
+        placeholder="Title"
         className="input input-bordered"
         value={formik.values.title}
         onChange={formik.handleChange}
@@ -51,7 +51,7 @@ function CreateNote() {
       <textarea
         type="text"
         id="detail"
-        placeholder="detail"
+        placeholder="Detail"
         className="textarea textarea-bordered mt-3"
         value={formik.values.detail}
         onChange={formik.handleChange}
@@ -82,7 +82,10 @@ function CreateNote() {
         </p>
       )}
 
-      <button type="submit" className="btn bg-blue-300 px-7 mt-5">
+      <button
+        type="submit"
+        className="btn bg-blue-600 hover:border-blue-600 hover:border hover:text-blue-600 px-7 mt-5"
+      >
         Add Note
       </button>
     </form>
