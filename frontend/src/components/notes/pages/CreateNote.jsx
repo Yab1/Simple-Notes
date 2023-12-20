@@ -1,15 +1,14 @@
-import { useSelector } from "react-redux";
 import { useFormik } from "formik";
 import { noteSchema } from "../schema";
+import { colorMapping } from "@/constants";
 
 function CreateNote() {
-  const tags = useSelector((state) => state.ui.tags);
-  // const dispatch = useDispatch();
-  // console.log(dispatch);
-
-  const renderTags = tags.map((tag, index) => (
-    <option key={index} value={tag.name}>
-      {tag.name}
+  const renderTags = Object.entries(colorMapping).map(([key]) => (
+    <option
+      key={crypto.randomUUID()}
+      value={key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}
+    >
+      {key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}
     </option>
   ));
 
@@ -51,6 +50,7 @@ function CreateNote() {
       <textarea
         type="text"
         id="detail"
+        rows="6"
         placeholder="Detail"
         className="textarea textarea-bordered mt-3"
         value={formik.values.detail}
@@ -84,7 +84,7 @@ function CreateNote() {
 
       <button
         type="submit"
-        className="btn bg-blue-600 hover:border-blue-600 hover:border hover:text-blue-600 px-7 mt-5"
+        className="btn text-white bg-blue-600 hover:border-blue-600 hover:border hover:text-blue-600 px-7 mt-5"
       >
         Add Note
       </button>
