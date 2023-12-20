@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { colorMapping } from "@/constants";
 
-console.log(colorMapping["Assignment".toUpperCase()].bgColor);
-
 function Notes() {
   const notes = useSelector((state) => state.notes.notes);
 
