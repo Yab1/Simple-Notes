@@ -28,8 +28,8 @@ const colorMapping = Object.freeze({
     bgColor: "bg-lime-600",
   },
   WISHLIST: {
-    textColor: "text-violet-600",
-    bgColor: "bg-violet-600",
+    textColor: "text-rose-800",
+    bgColor: "bg-rose-800",
   },
   WORK: {
     textColor: "text-purple-700",
