@@ -54,7 +54,7 @@ const initialState = {
         "Boost your productivity with effective hacks and time management strategies. Accomplish more in less time!",
       time: "11:15AM",
       date: "18 June 2023",
-      tag: "Shopping",
+      tag: "Wishlist",
     },
     {
       id: 7,
