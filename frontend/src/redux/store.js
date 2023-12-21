@@ -1,11 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { uiReducer, notesReducer } from "./slice";
+import createSagaMiddleware from "redux-saga";
+import logger from "redux-logger";
+import { uiReducer, notesReducer } from "./slices";
+import rootSaga from "./rootSaga";
+
+const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
     ui: uiReducer,
     notes: notesReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(sagaMiddleware).concat(logger),
 });
+
+sagaMiddleware.run(rootSaga);
 
 export default store;
