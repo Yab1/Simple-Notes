@@ -8,7 +8,7 @@ const noteSchema = object({
   detail: string()
     .required("Detail is required")
     .min(6, "Detail must be at least 4 characters")
-    .max(150, "Detail must be at most 150 characters"),
+    .max(2000, "Detail must be at most 2000 characters"),
   tag: string().required("Tag is required"),
 });
 
