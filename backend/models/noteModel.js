@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const noteSchema = new Schema(
   {
     title: { type: String, required: true },
-    details: { type: String, required: true },
-    category: { type: String, required: true },
+    detail: { type: String, required: true },
+    tag: { type: String, required: true },
   },
   { timestamps: true }
 );
