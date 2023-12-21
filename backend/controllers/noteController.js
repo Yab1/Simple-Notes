@@ -5,8 +5,11 @@ import mongoose from "mongoose";
 const getNotes = async (req, res) => {
   try {
     const notes = await Note.find({}).sort({ createdAt: -1 });
+    console.log(req);
+    console.log(notes);
     res.status(200).json(notes);
   } catch (error) {
+    console.log(error.message);
     res.status(400).json({ error: error.message });
   }
 };
