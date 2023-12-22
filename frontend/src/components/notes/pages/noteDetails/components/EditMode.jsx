@@ -1,13 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import { noteSchema } from "@/components/notes/schema";
 import { colorMapping } from "@/constants";
+import { toggleEditing } from "@/redux/slices/uiSlice";
+import SagaActions from "@/constants/sagaActions";
 
 function EditMode() {
   const { noteId } = useParams();
   const notes = useSelector((state) => state.notes.notes);
   const note = notes.filter((note) => note._id === noteId)[0];
+  const dispatch = useDispatch();
 
   const renderTags = Object.entries(colorMapping).map(([key]) => (
     <option
@@ -28,7 +31,12 @@ function EditMode() {
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
-      console.log(values);
+      dispatch({
+        type: SagaActions.UPDATE_NOTE,
+        noteId,
+        data: values,
+      });
+      dispatch(toggleEditing());
     },
   });
 
@@ -60,17 +68,19 @@ function EditMode() {
             {formik.errors.tag}
           </p>
         )}
-        <button className="btn btn-circle" type="submit">
-          <svg
-            className="w-5 aspect-square text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 16 12"
-          >
-            <path stroke="currentColor" d="M1 5.917 5.724 10.5 15 1.5" />
-          </svg>
-        </button>
+        <div className="tooltip tooltip-bottom" data-tip="Save changes">
+          <button className="btn btn-circle" type="submit">
+            <svg
+              className="w-5 aspect-square text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 16 12"
+            >
+              <path stroke="currentColor" d="M1 5.917 5.724 10.5 15 1.5" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <input
