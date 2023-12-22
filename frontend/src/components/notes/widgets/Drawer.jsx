@@ -25,9 +25,12 @@ function Drawer() {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content px-5 py-10 h-drawer grid place-content-center">
+      <div className="drawer-content px-5 ">
         <Outlet />
       </div>
+      {/* <div className="drawer-content px-5 py-10 h-drawer grid place-content-center">
+        <Outlet />
+      </div> */}
       <div className="drawer-side h-fit">
         <label
           htmlFor="my-drawer-2"
