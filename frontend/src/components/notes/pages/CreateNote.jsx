@@ -1,8 +1,11 @@
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import { noteSchema } from "../schema";
 import { colorMapping } from "@/constants";
+import { sagaActions } from "@/constants";
 
 function CreateNote() {
+  const dispatch = useDispatch();
   const renderTags = Object.entries(colorMapping).map(([key]) => (
     <option
       key={crypto.randomUUID()}
@@ -22,7 +25,8 @@ function CreateNote() {
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
-      console.log(values);
+      dispatch({ type: sagaActions.CREATE_NOTE, data: values });
+      formik.resetForm();
     },
   });
 
@@ -99,7 +103,7 @@ function CreateNote() {
 
         <button
           type="submit"
-          className="btn text-white bg-blue-600 hover:border-blue-600 hover:border hover:text-blue-600 px-7 col-start-1 row-start-3"
+          className="btn bg-gray-800 hover:bg-gray-700 px-7 col-start-1 row-start-3"
         >
           Add Note
         </button>
