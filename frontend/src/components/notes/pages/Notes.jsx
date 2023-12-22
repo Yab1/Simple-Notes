@@ -9,7 +9,7 @@ function Notes() {
   const renderNotes = notes.map(({ _id, title, tag, detail, updatedAt }) => {
     const { time, date } = formatDate(updatedAt);
     return (
-      <Link key={_id} to={`/note/${_id}`}>
+      <Link key={_id} to={`/note/${_id}`} className="h-fit rounded-3xl">
         <div
           className={
             "card shadow-xl text-white " +
