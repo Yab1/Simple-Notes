@@ -1,6 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import { childRoutes } from "@/components/notes/pages";
-import { Home, ErrorPage } from "@/layouts";
+import { authChildRoutes } from "@/components/auth/pages";
+import { Home, Auth, ErrorPage } from "@/layouts";
+
+const authRoutes = [
+  {
+    path: "/",
+    element: <Auth />,
+    children: authChildRoutes,
+    errorElement: <ErrorPage />,
+  },
+];
 
 const routes = [
   {
@@ -11,8 +21,10 @@ const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes, {
-  basename: "/quick-notes",
+export const authRouter = createBrowserRouter(authRoutes, {
+  basename: "/auth",
 });
 
-export default router;
+export const router = createBrowserRouter(routes, {
+  basename: "/daisy-notes",
+});
