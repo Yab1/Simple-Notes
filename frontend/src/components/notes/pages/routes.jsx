@@ -1,4 +1,11 @@
-import { Notes, CreateNote, EditNote, Profile, Settings, About } from "./index";
+import {
+  Notes,
+  CreateNote,
+  NoteDetails,
+  Profile,
+  Settings,
+  About,
+} from "./index";
 
 const childRoutes = [
   {
@@ -10,8 +17,8 @@ const childRoutes = [
     element: <CreateNote />,
   },
   {
-    path: "/edit/:id",
-    element: <EditNote />,
+    path: "/note/:noteId",
+    element: <NoteDetails />,
   },
   {
     path: "/about",
