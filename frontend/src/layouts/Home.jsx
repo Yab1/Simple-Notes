@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Navbar, Drawer } from "@/components/notes/widgets";
 import { sagaActions } from "@/constants";
-import { useDispatch } from "react-redux";
 
 function Home() {
   const dispatch = useDispatch();
