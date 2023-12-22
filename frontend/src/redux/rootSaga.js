@@ -1,8 +1,18 @@
 import { all } from "redux-saga/effects";
-import { watchFetchNotesRequest } from "./saga/crudSagas";
+import {
+  watchCreateNoteRequest,
+  watchFetchNotesRequest,
+  watchUpdateNoteRequest,
+  watchDeleteNoteRequest,
+} from "./saga/crudSagas";
 
 function* rootSaga() {
-  yield all([watchFetchNotesRequest()]);
+  yield all([
+    watchCreateNoteRequest(),
+    watchFetchNotesRequest(),
+    watchUpdateNoteRequest(),
+    watchDeleteNoteRequest(),
+  ]);
 }
 
 export default rootSaga;
