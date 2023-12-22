@@ -36,7 +36,6 @@ function EditMode() {
         noteId,
         data: values,
       });
-      dispatch(toggleEditing());
     },
   });
 
@@ -45,10 +44,7 @@ function EditMode() {
   };
 
   return (
-    <form
-      onSubmit={formik.handleSubmit}
-      className="px-5 flex flex-col gap-5 mt-14"
-    >
+    <form onSubmit={formik.handleSubmit} className="px-5 flex flex-col gap-5">
       <div className="flex justify-between items-center mb-2">
         <select
           id="tag"
@@ -68,7 +64,10 @@ function EditMode() {
             {formik.errors.tag}
           </p>
         )}
-        <div className="tooltip tooltip-bottom" data-tip="Save changes">
+        <div
+          className="ml-auto mr-3 tooltip tooltip-bottom"
+          data-tip="Save changes"
+        >
           <button className="btn btn-circle" type="submit">
             <svg
               className="w-5 aspect-square text-gray-800 dark:text-white"
@@ -78,6 +77,30 @@ function EditMode() {
               viewBox="0 0 16 12"
             >
               <path stroke="currentColor" d="M1 5.917 5.724 10.5 15 1.5" />
+            </svg>
+          </button>
+        </div>
+
+        <div className="tooltip tooltip-bottom" data-tip="Cancel">
+          <button
+            className="btn btn-circle"
+            type="button"
+            onClick={() => dispatch(toggleEditing())}
+          >
+            <svg
+              className="w-5 aspect-square text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 14"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="0.8"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
             </svg>
           </button>
         </div>
