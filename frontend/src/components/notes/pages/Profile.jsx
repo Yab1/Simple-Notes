@@ -2,9 +2,9 @@ import { AvatarSelector } from "../widgets";
 
 function Profile() {
   return (
-    <div className="grid gap-5">
+    <div className="grid gap-5 mt-10">
       <form action="" className="grid grid-cols-5 grid-rows-2">
-        <div className="avatar row-span-2 col-span-1">
+        <div className="avatar row-span-2 col-span-1 place-self-center">
           <div className="w-32 rounded">
             <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
@@ -23,7 +23,7 @@ function Profile() {
 
         <button
           type="submit"
-          className="btn btn-neutral row-span-2 w-fit place-self-center"
+          className="btn btn-neutral row-span-2 w-fit place-self-center bg-gray-800 hover:bg-gray-700"
         >
           Save Changes
         </button>
