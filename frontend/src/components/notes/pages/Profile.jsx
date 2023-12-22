@@ -2,7 +2,7 @@ import { AvatarSelector } from "../widgets";
 
 function Profile() {
   return (
-    <div className="grid gap-5 mt-10">
+    <div className="grid gap-5">
       <form action="" className="grid grid-cols-5 grid-rows-2">
         <div className="avatar row-span-2 col-span-1 place-self-center">
           <div className="w-32 rounded">
