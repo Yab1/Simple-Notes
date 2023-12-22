@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { colorMapping } from "@/constants";
 import { toggleEditing } from "@/redux/slices/uiSlice";
+import { sagaActions } from "@/constants";
 
 function ViewMode() {
   const { noteId } = useParams();
@@ -24,7 +25,10 @@ function ViewMode() {
           data-tip="
         Delete note"
         >
-          <button className="btn btn-circle">
+          <button
+            className="btn btn-circle"
+            onClick={() => dispatch({ type: sagaActions.DELETE_NOTE, noteId })}
+          >
             <svg
               className="w-5 aspect-square text-gray-800 dark:text-white"
               aria-hidden="true"
