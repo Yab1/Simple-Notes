@@ -9,41 +9,41 @@ function Notes() {
   const renderNotes = notes.map(({ _id, title, tag, detail, updatedAt }) => {
     const { time, date } = formatDate(updatedAt);
     return (
-      <Link key={_id} to={`/note/${_id}`} className="h-fit rounded-3xl">
-        <div
-          className={
-            "card shadow-xl text-white " +
-            colorMapping[tag.toUpperCase()].bgColor
-          }
-        >
-          <div className="card-body grid grid-cols-4">
-            <h2 className="card-title col-span-2">{title}</h2>
-            <div className="card-actions justify-end col-start-4">
-              <div
-                className={
-                  "badge bg-white border-none py-5 rounded-lg font-bold " +
-                  colorMapping[tag.toUpperCase()].textColor
-                }
-              >
-                {tag}
-              </div>
+      <Link
+        key={_id}
+        to={`/note/${_id}`}
+        className={
+          "card text-white shadow-xl p-5 h-56 " +
+          colorMapping[tag.toUpperCase()].bgColor
+        }
+      >
+        <div className="card-body grid grid-cols-4 grid-rows-4 p-0">
+          <h2 className="card-title col-span-2">{title}</h2>
+          <div className="card-actions justify-end col-start-4">
+            <div
+              className={
+                "badge bg-white border-none rounded-lg font-bold py-5 " +
+                colorMapping[tag.toUpperCase()].textColor
+              }
+            >
+              {tag}
             </div>
-            <p className="text-sm py-2 col-span-full">
-              {detail.slice(0, 300)}...
-            </p>
-            <p className="uppercase font-medium">{time}</p>
-            <p className="uppercase col-span-2 col-start-3 ml-auto font-medium">
-              {date}
-            </p>
           </div>
+          <p className="text-sm col-span-full row-start-2 row-span-2 pt-2">
+            {detail.slice(0, 250)}...
+          </p>
+          <p className="uppercase font-medium justify-self-start place-self-end">
+            {time}
+          </p>
+          <p className="uppercase col-span-2 col-start-3 font-medium justify-self-end place-self-end">
+            {date}
+          </p>
         </div>
       </Link>
     );
   });
 
-  return (
-    <div className="h-drawer py-5 grid grid-cols-2 gap-5">{renderNotes}</div>
-  );
+  return <div className="grid grid-cols-2 gap-5 h-80">{renderNotes}</div>;
 }
 
 export default Notes;
