@@ -11,7 +11,7 @@ function ViewMode() {
   const dispatch = useDispatch();
 
   return (
-    <div className="px-5 flex flex-col gap-5 mt-14">
+    <div className="px-5 flex flex-col gap-5">
       <div className="flex items-center mb-2 gap-3">
         <div
           className={`badge h-10 rounded-md ${
