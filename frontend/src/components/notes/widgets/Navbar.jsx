@@ -5,7 +5,7 @@ function Navbar() {
   const location = useLocation();
 
   return (
-    <header className="navbar bg-base-300 sticky">
+    <header className="navbar bg-base-300">
       <div className="dropdown dropdown-bottom navbar-start w-72 flex gap-3">
         <Avater />
       </div>
@@ -25,10 +25,7 @@ function Navbar() {
       <div className="navbar-end flex-1 px-3">
         <ThemeController />
 
-        <Link
-          to={`create`}
-          className="btn text-white bg-blue-600 hover:border-blue-600 hover:border hover:text-blue-600 ml-5"
-        >
+        <Link to={`create`} className="btn bg-gray-800 hover:bg-gray-700 ml-5">
           Add New Note
         </Link>
       </div>
