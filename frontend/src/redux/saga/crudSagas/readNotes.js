@@ -6,7 +6,10 @@ function* readNotesSaga() {
   try {
     yield put(dbStart());
 
-    const response = yield call(fetch, import.meta.env.VITE_FETCH_API_TARGET);
+    const response = yield call(
+      fetch,
+      import.meta.env.VITE_API_FETCH_NOTES_ENDPOINT
+    );
 
     if (!response.ok) throw new Error("Failed to fetch notes");
 

@@ -6,11 +6,15 @@ function* createNoteSaga({ data }) {
   try {
     yield put(dbStart());
 
-    const response = yield call(fetch, import.meta.env.VITE_FETCH_API_TARGET, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = yield call(
+      fetch,
+      import.meta.env.VITE_API_FETCH_NOTES_ENDPOINT,
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     const json = yield call([response, "json"]);
 
     if (!response.ok) throw Error(json.error);

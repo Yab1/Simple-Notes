@@ -8,7 +8,7 @@ function* deleteNoteSaga({ noteId }) {
 
     const response = yield call(
       fetch,
-      import.meta.env.VITE_FETCH_API_TARGET + "/" + noteId,
+      import.meta.env.VITE_API_FETCH_NOTES_ENDPOINT + "/" + noteId,
       {
         method: "DELETE",
       }
