@@ -56,4 +56,31 @@ authSchema.statics.signup = async function (
   return user;
 };
 
+// static signin method
+authSchema.statics.signin = async function (email, password) {
+  // validation
+  if (!email || !password) {
+    throw new Error(
+      "Please ensure all required fields are filled out before submitting the form."
+    );
+  }
+
+  const user = await this.findOne({ email });
+
+  if (!user) {
+    throw new Error(
+      "This email is not registered. Please check the email entered or sign up for a new account."
+    );
+  }
+
+  const match = await bcrypt.compare(password, user.password);
+
+  if (!match) {
+    throw new Error(
+      "Invalid password. Please recheck and enter the correct password for your account."
+    );
+  }
+  return user;
+};
+
 export default mongoose.model("Auth", authSchema);
