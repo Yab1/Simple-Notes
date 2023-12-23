@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import mongoose, { Error } from "mongoose";
+import validator from "validator";
 import bcrypt from "bcrypt";
 
 const Schema = mongoose.Schema;
@@ -20,6 +21,25 @@ authSchema.statics.signup = async function (
   password,
   profile
 ) {
+  // validation
+  if (!email || !password || !username) {
+    throw new Error(
+      "Please ensure all required fields are filled out before submitting the form."
+    );
+  }
+
+  if (!validator.isEmail(email)) {
+    throw new Error(
+      "The email provided is not in a valid format. Please enter a valid email address to continue."
+    );
+  }
+
+  if (!validator.isStrongPassword(password)) {
+    throw new Error(
+      "Please use a stronger password. Include uppercase, lowercase, numbers, and special characters. Aim for at least 8 characters."
+    );
+  }
+
   const exists = await this.findOne({ email });
 
   if (exists) {
