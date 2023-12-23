@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import { Home, Auth, ErrorPage } from "@/layouts";
 import authRoutes from "./authRoutes";
 import noteRoutes from "./noteRoutes";
@@ -9,7 +9,15 @@ const getRouter = (authenticated) => {
       path: "/",
       element: authenticated ? <Home /> : <Auth />,
       children: authenticated ? noteRoutes : authRoutes,
-      errorElement: <ErrorPage />,
+      errorElement: authenticated ? (
+        <Navigate to="/notes" />
+      ) : (
+        <Navigate to="/sign-in" />
+      ),
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
     },
   ];
 
