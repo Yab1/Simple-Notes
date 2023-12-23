@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         playpen: ["Playpen Sans", "sans-serif"],
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
   },
   daisyui: {
