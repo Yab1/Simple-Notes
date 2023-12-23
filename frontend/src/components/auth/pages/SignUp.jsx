@@ -17,7 +17,10 @@ function SignUp() {
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
-      dispatch({ type: sagaActions.SIGNUP_USER, credentials: values });
+      dispatch({
+        type: sagaActions.SIGNUP_USER,
+        credentials: { ...values, profile: "" },
+      });
     },
   });
 
