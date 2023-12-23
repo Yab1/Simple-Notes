@@ -1,4 +1,4 @@
-import express from "express";
+import { Router } from "express";
 import {
   getNotes,
   getNote,
@@ -7,7 +7,7 @@ import {
   updateNote,
 } from "../controllers/noteController.js";
 
-const noteRouter = express.Router();
+const noteRouter = Router();
 
 // GET all notes
 noteRouter.get("/", getNotes);
