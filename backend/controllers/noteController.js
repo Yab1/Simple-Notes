@@ -1,5 +1,5 @@
-import Note from "../models/noteModel.js";
 import mongoose from "mongoose";
+import Note from "../models/noteModel.js";
 
 // GET all note
 const getNotes = async (req, res) => {
