@@ -1,18 +1,23 @@
 import { useFormik } from "formik";
-import { authSchema } from "../schema";
+import { signupSchema } from "../schema";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sagaActions } from "@/constants";
 
 function SignUp() {
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
+      username: "",
       email: "",
       password: "",
     },
-    validationSchema: authSchema,
+    validationSchema: signupSchema,
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
-      console.log(values);
+      dispatch({ type: sagaActions.SIGNUP_USER, credentials: values });
     },
   });
 
@@ -54,6 +59,24 @@ function SignUp() {
           onSubmit={formik.handleSubmit}
           className="col-span-full flex flex-col gap-4"
         >
+          <div className="flex flex-col">
+            <input
+              id="username"
+              type="text"
+              placeholder="Username"
+              className={`input input-bordered w-full ${
+                formik.errors.username ? "input-error" : ""
+              }`}
+              value={formik.values.username}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.errors.username && (
+              <p className="text-red-500 text-sm self-start ml-3 mt-px">
+                {formik.errors.username}
+              </p>
+            )}
+          </div>
           <div className="flex flex-col">
             <input
               id="email"
