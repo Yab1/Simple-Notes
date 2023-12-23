@@ -12,7 +12,7 @@ function App() {
   return (
     <Fragment>
       {authStatus === status.LOADING ? <Loading /> : null}
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </Fragment>
   );
 }
