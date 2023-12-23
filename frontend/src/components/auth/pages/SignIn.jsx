@@ -1,18 +1,21 @@
 import { useFormik } from "formik";
-import { authSchema } from "../schema";
+import { signinSchema } from "../schema";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sagaActions } from "@/constants";
 
 function SignIn() {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    validationSchema: authSchema,
+    validationSchema: signinSchema,
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit: (values) => {
-      console.log(values);
+      dispatch({ type: sagaActions.SIGNIN_USER, credentials: values });
     },
   });
 
