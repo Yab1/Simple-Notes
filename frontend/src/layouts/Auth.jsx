@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Auth() {
+  const { authMsg, authError } = useSelector((state) => state.auth);
+
   return (
     <div className="w-full h-screen flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0">
       <div className="w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center">
         <Outlet />
       </div>
-      <div className="w-1/2 lg:h-full flex lg:items-end justify-center p-4">
+      <div className="w-1/2 lg:h-full flex lg:items-end justify-center p-4 relative">
         <svg
           className="w-full text-blue-600"
           xmlns="http://www.w3.org/2000/svg"
@@ -188,6 +191,45 @@ function Auth() {
             fill="#2f2e41"
           ></ellipse>
         </svg>
+        {authError && !authMsg ? (
+          <div role="alert" className="alert alert-error absolute top-5 w-fit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{authError}</span>
+          </div>
+        ) : null}
+        {authMsg && !authError ? (
+          <div
+            role="alert"
+            className="alert alert-success absolute top-5 w-fit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{authMsg}</span>
+          </div>
+        ) : null}
       </div>
     </div>
   );
