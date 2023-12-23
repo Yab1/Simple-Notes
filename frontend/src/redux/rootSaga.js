@@ -1,4 +1,5 @@
 import { all } from "redux-saga/effects";
+import { watchSignupRequest, watchSigninRequest } from "./saga/authSagas";
 import {
   watchCreateNoteRequest,
   watchFetchNotesRequest,
@@ -8,6 +9,8 @@ import {
 
 function* rootSaga() {
   yield all([
+    watchSignupRequest(),
+    watchSigninRequest(),
     watchCreateNoteRequest(),
     watchFetchNotesRequest(),
     watchUpdateNoteRequest(),

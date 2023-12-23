@@ -4,10 +4,8 @@ const SagaActions = Object.freeze({
   // INITIALIZE_USER = "auth/initialize-user",
 
   // // USER CRUD
-  // CREATE_USER = "firestore/create-user",
-  // READ_USER = "firestore/read-user",
-  // UPDATE_USER = "firestore/update-user",
-  // DELETE_USER = "firestore/delete-user",
+  SIGNIN_USER: "auth/signin-user",
+  SIGNUP_USER: "auth/signup-user",
 
   // PROJECT CRUD
   CREATE_NOTE: "create-note",
