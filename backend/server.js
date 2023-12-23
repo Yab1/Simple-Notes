@@ -1,6 +1,7 @@
+import mongoose from "mongoose";
 import "dotenv/config";
 import express from "express";
-import mongoose from "mongoose";
+import authRouter from "./routes/authRouter.js";
 import noteRouter from "./routes/noteRouter.js";
 
 // express app
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
 });
 
 // routes
+app.use("/api/auth", authRouter);
 app.use("/api/notes", noteRouter);
 
 (async () => {
