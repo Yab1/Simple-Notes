@@ -32,7 +32,8 @@ function Notes() {
             </div>
           </div>
           <p className="text-sm col-span-full row-start-2 row-span-2 pt-2">
-            {detail.slice(0, 250)}...
+            {detail.slice(0, 200)}
+            {detail.length > 200 ? "..." : null}
           </p>
           <p className="uppercase font-medium justify-self-start place-self-end">
             {time}
