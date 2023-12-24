@@ -24,6 +24,7 @@ const signUp = async (req, res) => {
 const signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
+
     const user = await Auth.signin(email, password);
 
     // create a token
