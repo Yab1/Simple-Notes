@@ -4,7 +4,6 @@ import { status } from "@/constants";
 const initialState = {
   authStatus: status.IDLE,
   authError: null,
-  authMsg: null,
   user: null,
 };
 
@@ -19,13 +18,11 @@ const authSlice = createSlice({
     authSucceeded: (state, action) => {
       state.authStatus = status.SUCCEEDED;
       state.user = action.payload.json;
-      state.authMsg = action.payload.msg;
       state.authError = null;
     },
     authFailure: (state, action) => {
       state.authStatus = status.FAILED;
       state.authError = action.payload;
-      state.authMsg = null;
     },
   },
 });
