@@ -5,6 +5,7 @@ const initialState = {
   dbStatus: status.IDLE,
   dbError: "",
   notes: [],
+  tags: {},
 };
 
 const notesSlice = createSlice({
@@ -26,10 +27,13 @@ const notesSlice = createSlice({
       state.dbStatus = status.FAILED;
       state.dbError = action.payload;
     },
+    setTags: (state, action) => {
+      state.tags = action.payload;
+    },
   },
 });
 
-export const { dbIdle, dbStart, dbSucceeded, dbFailure, noteDeleted } =
+export const { dbIdle, dbStart, dbSucceeded, dbFailure, noteDeleted, setTags } =
   notesSlice.actions;
 
 export default notesSlice.reducer;
