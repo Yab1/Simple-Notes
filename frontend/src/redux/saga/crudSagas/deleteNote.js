@@ -25,7 +25,6 @@ function* deleteNoteSaga({ noteId }) {
 
     yield put(noteDeleted(json._id));
   } catch (error) {
-    console.log(error);
     yield put(dbFailure(error.message));
   }
 }
