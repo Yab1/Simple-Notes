@@ -17,7 +17,7 @@ const authSlice = createSlice({
     },
     authSucceeded: (state, action) => {
       state.authStatus = status.SUCCEEDED;
-      state.user = action.payload.json;
+      state.user = action.payload;
       state.authError = null;
     },
     authFailure: (state, action) => {
