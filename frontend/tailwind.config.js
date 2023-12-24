@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         playpen: ["Playpen Sans", "sans-serif"],
       },
+      height: {
+        main: "calc(100vh - 66px)",
+      },
       animation: {
         "spin-slow": "spin 3s linear infinite",
       },
