@@ -16,16 +16,20 @@ const notesSlice = createSlice({
     dbStart: (state) => {
       state.dbStatus = status.LOADING;
     },
-    dbSucceeded: (state, action) => {
+    dbFailure: (state, action) => {
+      state.dbStatus = status.FAILED;
+      state.dbError = action.payload;
+    },
+    setNotes: (state, action) => {
+      state.dbStatus = status.SUCCEEDED;
+      state.notes = action.payload;
+    },
+    addNote: (state, action) => {
       state.dbStatus = status.SUCCEEDED;
       state.notes = [...state.notes, ...action.payload];
     },
     noteDeleted: (state, action) => {
       state.notes = state.notes.filter((note) => note._id !== action.payload);
-    },
-    dbFailure: (state, action) => {
-      state.dbStatus = status.FAILED;
-      state.dbError = action.payload;
     },
     setTags: (state, action) => {
       state.tags = action.payload;
@@ -33,7 +37,14 @@ const notesSlice = createSlice({
   },
 });
 
-export const { dbIdle, dbStart, dbSucceeded, dbFailure, noteDeleted, setTags } =
-  notesSlice.actions;
+export const {
+  dbIdle,
+  dbStart,
+  dbFailure,
+  setNotes,
+  addNote,
+  noteDeleted,
+  setTags,
+} = notesSlice.actions;
 
 export default notesSlice.reducer;
