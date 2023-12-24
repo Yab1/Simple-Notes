@@ -16,13 +16,13 @@ function FilteredNotes() {
         key={crypto.randomUUID()}
         to={`/note/${_id}`}
         className={
-          "card text-white shadow-xl p-5 h-60 " +
+          "card text-white shadow-xl p-5 h-56 " +
           colorMapping[tag.toUpperCase()].bgColor
         }
       >
-        <div className="card-body grid grid-cols-4 grid-rows-3 p-0">
-          <h2 className="card-title col-span-2 h-fit">{title}</h2>
-          <div className="card-actions justify-end col-start-4 h-fit">
+        <div className="card-body grid grid-cols-4 grid-rows-4 p-0">
+          <h2 className="card-title col-span-2">{title}</h2>
+          <div className="card-actions justify-end col-start-4">
             <div
               className={
                 "badge bg-white border-none rounded-lg font-bold py-5 " +
@@ -32,7 +32,7 @@ function FilteredNotes() {
               {tag}
             </div>
           </div>
-          <p className="text-sm col-span-full row-start-2 h-fit">
+          <p className="text-sm col-span-full row-start-2 row-span-2 pt-2">
             {detail.slice(0, 200)}
             {detail.length > 200 ? "..." : null}
           </p>
@@ -43,6 +43,7 @@ function FilteredNotes() {
       </Link>
     )
   );
+
   return (
     <div className="grid grid-cols-2 gap-5 p-5">
       {dbStatus === status.LOADING ? <NoteSkeleton /> : renderNotes}
