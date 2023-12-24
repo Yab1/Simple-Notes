@@ -1,14 +1,22 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, select } from "redux-saga/effects";
 import { dbStart, dbSucceeded, dbFailure } from "@/redux/slices";
 import { sagaActions } from "@/constants";
+import { getToken } from "@/redux/slices";
 
 function* readNotesSaga() {
   try {
     yield put(dbStart());
 
+    const token = yield select(getToken);
+
     const response = yield call(
       fetch,
-      import.meta.env.VITE_API_FETCH_NOTES_ENDPOINT
+      import.meta.env.VITE_API_FETCH_NOTES_ENDPOINT,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
 
     if (!response.ok) throw new Error("Failed to fetch notes");
