@@ -81,6 +81,7 @@ function SignIn() {
               id="password"
               type="password"
               placeholder="Password"
+              autoComplete="current-password"
               className={`input input-bordered w-full ${
                 formik.errors.password ? "input-error" : ""
               }`}
@@ -113,7 +114,7 @@ function SignIn() {
               type="button"
               className="btn btn-active btn-link !no-underline p-0 ml-1"
             >
-              <Link to={"/sign-up"}>Sign up here</Link>
+              <Link to={"/auth/sign-up"}>Sign up here</Link>
             </button>
           </p>
         </form>
