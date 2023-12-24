@@ -1,10 +1,13 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, select } from "redux-saga/effects";
 import { dbStart, dbSucceeded, dbFailure } from "@/redux/slices";
 import { sagaActions } from "@/constants";
+import { getToken } from "@/redux/slices";
 
 function* createNoteSaga({ data }) {
   try {
     yield put(dbStart());
+
+    const token = yield select(getToken);
 
     const response = yield call(
       fetch,
@@ -12,7 +15,10 @@ function* createNoteSaga({ data }) {
       {
         method: "POST",
         body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       }
     );
     const json = yield call([response, "json"]);
