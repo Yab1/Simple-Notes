@@ -43,7 +43,9 @@ function Notes() {
     );
   });
 
-  return <div className="grid grid-cols-2 gap-5 h-80">{renderNotes}</div>;
+  return (
+    <div className="grid grid-cols-2 gap-5 overflow-auto">{renderNotes}</div>
+  );
 }
 
 export default Notes;
