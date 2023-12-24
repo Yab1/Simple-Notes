@@ -1,5 +1,5 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
-import { Home, Auth, ErrorPage } from "@/layouts";
+import { Home, Auth } from "@/layouts";
 import authRoutes from "./authRoutes";
 import noteRoutes from "./noteRoutes";
 
@@ -12,17 +12,21 @@ const getRouter = (authenticated) => {
       errorElement: authenticated ? (
         <Navigate to="/notes" />
       ) : (
-        <Navigate to="/sign-in" />
+        <Navigate to="/auth/sign-in" />
       ),
     },
     {
       path: "*",
-      element: <ErrorPage />,
+      element: authenticated ? (
+        <Navigate to="/notes" />
+      ) : (
+        <Navigate to="/auth/sign-in" />
+      ),
     },
   ];
 
   return createBrowserRouter(baseRoutes, {
-    basename: authenticated ? "/daisy-notes" : "/auth",
+    basename: "/daisy-notes",
   });
 };
 
