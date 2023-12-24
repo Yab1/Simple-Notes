@@ -2,11 +2,11 @@ import { SignUp, SignIn } from "@/components/auth/pages";
 
 const authRoutes = [
   {
-    path: "/sign-in",
+    path: "/auth/sign-in",
     element: <SignIn />,
   },
   {
-    path: "/sign-up",
+    path: "/auth/sign-up",
     element: <SignUp />,
   },
 ];
