@@ -21,12 +21,7 @@ function* signupSaga({ credentials }) {
     if (!response.ok) throw Error(json.error);
 
     localStorage.setItem("daisy-notes-user", JSON.stringify(json));
-    yield put(
-      authSucceeded({
-        json,
-        msg: "Your account has been created successfully. Thank you for joining us.",
-      })
-    );
+    yield put(authSucceeded(json));
   } catch (error) {
     yield put(authFailure(error.message));
   }
