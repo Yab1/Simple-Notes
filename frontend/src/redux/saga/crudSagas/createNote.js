@@ -1,5 +1,5 @@
 import { call, put, takeLatest, select } from "redux-saga/effects";
-import { dbStart, dbSucceeded, dbFailure } from "@/redux/slices";
+import { dbStart, addNote, dbFailure } from "@/redux/slices";
 import { sagaActions } from "@/constants";
 import { getToken } from "@/redux/slices";
 
@@ -25,7 +25,7 @@ function* createNoteSaga({ data }) {
 
     if (!response.ok) throw Error(json.error);
 
-    yield put(dbSucceeded([json]));
+    yield put(addNote([json]));
   } catch (error) {
     console.log(error);
     yield put(dbFailure(error.message));
