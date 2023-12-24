@@ -5,6 +5,7 @@ import {
   Profile,
   Settings,
   About,
+  FilteredNotes,
 } from "@/components/notes/pages";
 
 const noteRoutes = [
@@ -19,6 +20,10 @@ const noteRoutes = [
   {
     path: "/note/:noteId",
     element: <NoteDetails />,
+  },
+  {
+    path: "/notes/:tag",
+    element: <FilteredNotes />,
   },
   {
     path: "/about",
