@@ -1,31 +1,41 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import { colorMapping } from "@/constants";
+import { useSelector } from "react-redux";
 
 function Drawer() {
-  const renderTags = Object.entries(colorMapping).map(([key, values]) => (
-    <Fragment key={crypto.randomUUID()}>
-      <li className="mx-2">
-        <a className="flex items-center text-white font-medium">
-          <div
-            className={`w-3 aspect-square ${values.bgColor} rounded-full`}
-          ></div>
-          {key.charAt(0).toUpperCase() + key.slice(1).toLowerCase()}
-          <div
-            className={`badge ${values.bgColor} border-none ml-auto text-white`}
-          >
-            07
-          </div>
-        </a>
-      </li>
-      <div className="divider my-1"></div>
-    </Fragment>
-  ));
+  const tags = useSelector((state) => state.notes.tags);
+
+  const renderTags =
+    Object.keys(tags).length > 0
+      ? Object.entries(tags).map(([key, value]) => (
+          <Fragment key={key}>
+            <li className="mx-2">
+              <a className="flex items-center text-white font-medium">
+                <div
+                  className={`w-3 aspect-square ${
+                    colorMapping[key.toUpperCase()].bgColor
+                  } rounded-full`}
+                ></div>
+                {key}
+                <div
+                  className={`badge ${
+                    colorMapping[key.toUpperCase()].bgColor
+                  } border-none ml-auto text-white`}
+                >
+                  {value}
+                </div>
+              </a>
+            </li>
+            <div className="divider my-1"></div>
+          </Fragment>
+        ))
+      : null;
 
   return (
     <div className="drawer lg:drawer-open ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content px-5 py-10 h-main overflow-auto">
+      <div className="drawer-content p-5 h-main overflow-auto">
         <Outlet />
       </div>
       <div className="drawer-side h-fit">
