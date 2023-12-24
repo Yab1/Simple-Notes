@@ -1,16 +1,23 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authIdle } from "@/redux/slices/authSlice";
 
 function Avater() {
+  const user = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
+
+  function logout() {
+    localStorage.removeItem("daisy-notes-user");
+    dispatch(authIdle());
+  }
+
   return (
     <Fragment>
       <div>
         <div tabIndex={0} className="avatar btn btn-ghost btn-circle ml-3">
           <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
+            <img alt="Tailwind CSS Navbar component" src={user.avatar} />
           </div>
         </div>
         <ul
@@ -23,12 +30,12 @@ function Avater() {
           <li>
             <Link to={`about`}>About</Link>
           </li>
-          <li>
-            <Link to={`logout`}>Logout</Link>
+          <li onClick={logout}>
+            <span>Logout</span>
           </li>
         </ul>
       </div>
-      <p className="font-semibold">Yeabsera</p>
+      <p className="font-semibold">{user.username}</p>
     </Fragment>
   );
 }
