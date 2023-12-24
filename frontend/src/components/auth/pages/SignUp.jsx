@@ -1,8 +1,9 @@
 import { useFormik } from "formik";
-import { signupSchema } from "../schema";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { signupSchema } from "../schema";
 import { sagaActions } from "@/constants";
+import { generateAvatar } from "@/functions";
 
 function SignUp() {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ function SignUp() {
       username: "",
       email: "",
       password: "",
+      avatar: generateAvatar(),
     },
     validationSchema: signupSchema,
     validateOnChange: false,
@@ -19,7 +21,7 @@ function SignUp() {
     onSubmit: (values) => {
       dispatch({
         type: sagaActions.SIGNUP_USER,
-        credentials: { ...values, profile: "" },
+        credentials: values,
       });
     },
   });
@@ -131,7 +133,7 @@ function SignUp() {
               type="button"
               className="btn btn-active btn-link !no-underline p-0 ml-1"
             >
-              <Link to={"/sign-in"}>Sign in here</Link>
+              <Link to={"/auth/sign-in"}>Sign in here</Link>
             </button>
           </p>
         </form>
