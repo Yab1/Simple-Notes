@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { colorMapping } from "@/constants";
 import { formatDate } from "@/functions";
+import { NoteSkeleton } from "../widgets";
+import { status } from "@/constants";
 
 function Notes() {
-  const notes = useSelector((state) => state.notes.notes);
+  const { notes, dbStatus } = useSelector((state) => state.notes);
 
   const renderNotes = notes.map(({ _id, title, tag, detail, updatedAt }) => {
     const { time, date } = formatDate(updatedAt);
@@ -44,7 +46,9 @@ function Notes() {
   });
 
   return (
-    <div className="grid grid-cols-2 gap-5 overflow-auto">{renderNotes}</div>
+    <div className="grid grid-cols-2 gap-5">
+      {dbStatus === status.LOADING ? <NoteSkeleton /> : renderNotes}
+    </div>
   );
 }
 
