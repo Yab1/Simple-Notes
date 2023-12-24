@@ -8,7 +8,7 @@ const AvatarSelector = () => {
   useLayoutEffect(() => {
     const generateAvatars = () => {
       const newAvatars = [];
-      for (let i = 0; i < 36; i++) {
+      for (let i = 0; i < 18; i++) {
         const seed = Math.random().toString(3);
         const avatar = createAvatar(bottts, {
           seed: seed,
@@ -29,14 +29,14 @@ const AvatarSelector = () => {
   return (
     <div className="flex flex-col items-center">
       <h2 className="font-medium text-xl capitalize">Change your avatar</h2>
-      <div className="grid grid-cols-9 gap-y-8">
-        {avatars.map((avatar, index) => (
+      <div className="grid grid-cols-6 gap-y-8">
+        {avatars.map((avatar) => (
           <div
-            key={index}
+            key={crypto.randomUUID()}
             className="btn btn-link"
             onClick={() => handleAvatarSelect(avatar)}
           >
-            <img src={avatar} alt={`Avatar ${index}`} />
+            <img src={avatar} alt={`Avatar`} />
           </div>
         ))}
       </div>
