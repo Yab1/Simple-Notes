@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   editing: false,
+  deleting: true,
 };
 
 const uiSlice = createSlice({
@@ -11,8 +12,11 @@ const uiSlice = createSlice({
     toggleEditing: (state) => {
       state.editing = !state.editing;
     },
+    toggleDeleting: (state, action) => {
+      state.deleting = action.payload;
+    },
   },
 });
 
-export const { toggleEditing } = uiSlice.actions;
+export const { toggleEditing, toggleDeleting } = uiSlice.actions;
 export default uiSlice.reducer;
