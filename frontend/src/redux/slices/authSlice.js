@@ -27,6 +27,8 @@ const authSlice = createSlice({
   },
 });
 
+export const getToken = (state) => state.auth.user.token;
+
 export const { authIdle, authStart, authSucceeded, authFailure } =
   authSlice.actions;
 export default authSlice.reducer;
