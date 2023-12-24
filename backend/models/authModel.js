@@ -9,20 +9,15 @@ const authSchema = new Schema(
     username: { type: String, require: true },
     email: { type: String, require: true, unique: true },
     password: { type: String, require: true },
-    profile: { type: String, require: false },
+    avatar: { type: String, require: true },
   },
   { timestamps: true }
 );
 
 // Static signup method
-authSchema.statics.signup = async function (
-  username,
-  email,
-  password,
-  profile
-) {
+authSchema.statics.signup = async function (username, email, password, avatar) {
   // validation
-  if (!email || !password || !username) {
+  if (!email || !password || !username || !avatar) {
     throw new Error(
       "Please ensure all required fields are filled out before submitting the form."
     );
@@ -51,7 +46,7 @@ authSchema.statics.signup = async function (
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ username, email, password: hash, profile });
+  const user = await this.create({ username, email, password: hash, avatar });
 
   return user;
 };
